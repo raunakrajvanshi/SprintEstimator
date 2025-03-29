@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprint Effort Estimator</title>
+</head>
+<body>
+    <h2>Sprint Effort Estimator using LLM</h2>
+
+    <form method="POST">
+        <label>User Story Description:</label><br>
+        <textarea name="description" required rows="4" cols="50"></textarea><br>
+
+        <label>Acceptance Criteria:</label><br>
+        <textarea name="criteria" required rows="3" cols="50"></textarea><br>
+
+        <label>Team Size:</label><br>
+        <input type="number" name="team_size" required><br>
+
+        <label>Dependencies:</label><br>
+        <textarea name="dependencies" rows="2" cols="50"></textarea><br>
+
+        <label>Risks:</label><br>
+        <textarea name="risks" rows="2" cols="50"></textarea><br><br>
+
+        <button type="submit">Estimate Effort</button>
+    </form>
+
+    {% if estimation %}
+        <h3>Estimation Result:</h3>
+        <pre>{{ estimation }}</pre>
+    {% endif %}
+</body>
+</html>

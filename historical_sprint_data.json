@@ -1,0 +1,1438 @@
+[
+  {
+    "Story_ID": "US001",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Third-party OAuth service"], ["Email service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US002",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Inventory API"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US003",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Database migrations"], ["External payment gateway"]],
+    "Risks": [["Service downtime"], ["Deployment issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US004",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["API endpoint availability"], ["Notification system"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US005",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["External payment gateway"]],
+    "Risks": [["Deployment issues"], ["Third-party outages"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US006",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Inventory API"], ["Notification system"]],
+    "Risks": [
+      ["Database performance bottlenecks"],
+      ["Integration complexities"]
+    ],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US007",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["External payment gateway"], ["Email service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US008",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Email service"]],
+    "Risks": [["Service downtime"], ["Integration complexities"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US009",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Email service"], ["Notification system"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US010",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [["Possible delays due to API issues"], ["Service downtime"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US011",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["External payment gateway"]],
+    "Risks": [["Deployment issues"], ["Third-party outages"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US012",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Email service"], ["Database migrations"]],
+    "Risks": [["Third-party outages"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US013",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Inventory API"], ["Notification system"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US014",
+    "User_Story_Description": "As a visitor, I want to register a new account",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Authentication service"]],
+    "Risks": [["Third-party outages"], ["Possible delays due to API issues"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US015",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Inventory API"]],
+    "Risks": [["Third-party outages"], ["Deployment issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US016",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [
+      ["API endpoint availability"],
+      ["External payment gateway"]
+    ],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US017",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Service downtime"], ["Integration complexities"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US018",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Email service"], ["Authentication service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US019",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Database migrations"], ["Authentication service"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US020",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [["Deployment issues"], ["Integration complexities"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US021",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["API endpoint availability"]],
+    "Risks": [
+      ["Database performance bottlenecks"],
+      ["Possible delays due to API issues"]
+    ],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US022",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Third-party OAuth service"]],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US023",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Notification system"], ["Database migrations"]],
+    "Risks": [["Service downtime"], ["Possible delays due to API issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US024",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["API endpoint availability"]],
+    "Risks": [["Possible delays due to API issues"], ["Service downtime"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US025",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Email service"], ["External payment gateway"]],
+    "Risks": [["Deployment issues"], ["Database performance bottlenecks"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US026",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Authentication service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US027",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US028",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Email service"], ["Third-party OAuth service"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US029",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Authentication service"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US030",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["API endpoint availability"], ["Inventory API"]],
+    "Risks": [["Third-party outages"], ["Service downtime"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US031",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Email service"], ["Inventory API"]],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US032",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Third-party OAuth service"], ["Email service"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US033",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US034",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Inventory API"], ["Email service"]],
+    "Risks": [
+      ["Integration complexities"],
+      ["Possible delays due to API issues"]
+    ],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US035",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Third-party OAuth service"]],
+    "Risks": [["Third-party outages"], ["Possible delays due to API issues"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US036",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Third-party OAuth service"], ["Email service"]],
+    "Risks": [["Deployment issues"], ["Integration complexities"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US037",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["API endpoint availability"], ["Inventory API"]],
+    "Risks": [["Deployment issues"], ["Service downtime"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US038",
+    "User_Story_Description": "As a visitor, I want to register a new account",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [
+      ["Possible delays due to API issues"],
+      ["Database performance bottlenecks"]
+    ],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US039",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US040",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["External payment gateway"], ["Notification system"]],
+    "Risks": [["Third-party outages"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US041",
+    "User_Story_Description": "As a visitor, I want to register a new account",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Database migrations"], ["External payment gateway"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US042",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Notification system"], ["Database migrations"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US043",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Notification system"]],
+    "Risks": [["Third-party outages"], ["Service downtime"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US044",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US045",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Email service"], ["Inventory API"]],
+    "Risks": [
+      ["Possible delays due to API issues"],
+      ["Database performance bottlenecks"]
+    ],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US046",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Inventory API"], ["Database migrations"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US047",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Email service"], ["API endpoint availability"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US048",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["External payment gateway"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US049",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Database migrations"], ["External payment gateway"]],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US050",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Email service"]],
+    "Risks": [["Third-party outages"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US051",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["External payment gateway"], ["Inventory API"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US052",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Database migrations"], ["Email service"]],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US053",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Inventory API"], ["External payment gateway"]],
+    "Risks": [["Database performance bottlenecks"], ["Third-party outages"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US054",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Notification system"], ["Third-party OAuth service"]],
+    "Risks": [["Third-party outages"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US055",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Notification system"], ["Email service"]],
+    "Risks": [["Service downtime"], ["Third-party outages"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US056",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Authentication service"]],
+    "Risks": [
+      ["Database performance bottlenecks"],
+      ["Integration complexities"]
+    ],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US057",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["External payment gateway"], ["Notification system"]],
+    "Risks": [["Third-party outages"], ["Database performance bottlenecks"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US058",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Notification system"], ["Database migrations"]],
+    "Risks": [
+      ["Database performance bottlenecks"],
+      ["Integration complexities"]
+    ],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US059",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Email service"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US060",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["External payment gateway"], ["Authentication service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US061",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["API endpoint availability"], ["Email service"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US062",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Authentication service"], ["Notification system"]],
+    "Risks": [["Database performance bottlenecks"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US063",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Inventory API"], ["API endpoint availability"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US064",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["External payment gateway"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US065",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Authentication service"], ["API endpoint availability"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US066",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Third-party outages"], ["Deployment issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US067",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [["Service downtime"], ["Possible delays due to API issues"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US068",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Notification system"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US069",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["API endpoint availability"], ["Inventory API"]],
+    "Risks": [["Service downtime"], ["Database performance bottlenecks"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US070",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US071",
+    "User_Story_Description": "As a visitor, I want to register a new account",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [["Integration complexities"], ["Third-party outages"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US072",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Database migrations"], ["Authentication service"]],
+    "Risks": [["Third-party outages"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US073",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [
+      ["API endpoint availability"],
+      ["Third-party OAuth service"]
+    ],
+    "Risks": [["Service downtime"], ["Deployment issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US074",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["External payment gateway"], ["Email service"]],
+    "Risks": [
+      ["Database performance bottlenecks"],
+      ["Possible delays due to API issues"]
+    ],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US075",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Email service"], ["Authentication service"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 1,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US076",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Third-party OAuth service"], ["Database migrations"]],
+    "Risks": [["Third-party outages"], ["Possible delays due to API issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US077",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Database migrations"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US078",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["External payment gateway"], ["Database migrations"]],
+    "Risks": [["Third-party outages"], ["Integration complexities"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US079",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [["Notification system"], ["Authentication service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US080",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Authentication service"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US081",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Third-party OAuth service"], ["Authentication service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US082",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Notification system"], ["Database migrations"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US083",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["External payment gateway"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US084",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Database migrations"], ["API endpoint availability"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US085",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Authentication service"], ["Email service"]],
+    "Risks": [["Third-party outages"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US086",
+    "User_Story_Description": "As an admin, I want to manage user roles",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Email service"], ["Authentication service"]],
+    "Risks": [
+      ["Integration complexities"],
+      ["Possible delays due to API issues"]
+    ],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US087",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Email service"]],
+    "Risks": [["Integration complexities"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US088",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Third-party OAuth service"]],
+    "Risks": [["Third-party outages"], ["Possible delays due to API issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US089",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Inventory API"]],
+    "Risks": [["Deployment issues"], ["Integration complexities"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 16
+  },
+  {
+    "Story_ID": "US090",
+    "User_Story_Description": "As a user, I want to login to access my account",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Email service"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 2
+  },
+  {
+    "Story_ID": "US091",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["External payment gateway"]],
+    "Risks": [["Integration complexities"], ["Service downtime"]],
+    "Actual_Story_Points": 5,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US092",
+    "User_Story_Description": "As a visitor, I want to register a new account",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Third-party OAuth service"], ["Notification system"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US093",
+    "User_Story_Description": "As a customer, I want to view my order history",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["API endpoint availability"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US094",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 6,
+    "Dependencies": [["Inventory API"], ["Database migrations"]],
+    "Risks": [["Possible delays due to API issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US095",
+    "User_Story_Description": "As a vendor, I want to update product inventory",
+    "Acceptance_Criteria": [
+      "Search accuracy",
+      "Sorting options",
+      "Performance"
+    ],
+    "Team_Size": 8,
+    "Dependencies": [["Notification system"]],
+    "Risks": [["Deployment issues"], ["Service downtime"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US096",
+    "User_Story_Description": "As a user, I want to receive email notifications",
+    "Acceptance_Criteria": [
+      "Input validation",
+      "Error handling",
+      "UI responsiveness"
+    ],
+    "Team_Size": 3,
+    "Dependencies": [
+      ["Third-party OAuth service"],
+      ["API endpoint availability"]
+    ],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 13,
+    "Actual_Hours": 8
+  },
+  {
+    "Story_ID": "US097",
+    "User_Story_Description": "As a user, I want to update my profile information",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 7,
+    "Dependencies": [["Notification system"]],
+    "Risks": [["Service downtime"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 24
+  },
+  {
+    "Story_ID": "US098",
+    "User_Story_Description": "As a customer, I want to add products to a wishlist",
+    "Acceptance_Criteria": [
+      "CRUD operations",
+      "Security checks",
+      "Logging actions"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["External payment gateway"], ["Database migrations"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 3,
+    "Actual_Hours": 4
+  },
+  {
+    "Story_ID": "US099",
+    "User_Story_Description": "As a user, I want to reset my password",
+    "Acceptance_Criteria": [
+      "Form submission",
+      "Email verification",
+      "User feedback"
+    ],
+    "Team_Size": 4,
+    "Dependencies": [["Inventory API"], ["External payment gateway"]],
+    "Risks": [["Deployment issues"]],
+    "Actual_Story_Points": 2,
+    "Actual_Hours": 12
+  },
+  {
+    "Story_ID": "US100",
+    "User_Story_Description": "As a shopper, I want to search products by category",
+    "Acceptance_Criteria": [
+      "Data retrieval",
+      "Filtering options",
+      "Pagination"
+    ],
+    "Team_Size": 5,
+    "Dependencies": [["Third-party OAuth service"]],
+    "Risks": [["Third-party outages"], ["Database performance bottlenecks"]],
+    "Actual_Story_Points": 8,
+    "Actual_Hours": 8
+  }
+]
