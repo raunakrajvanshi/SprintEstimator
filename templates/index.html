@@ -1,33 +1,341 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sprint Effort Estimator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Sprint Estimator & Project Planner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            padding: 40px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .submit-section {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #e1e5e9;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-top: 1px solid #e1e5e9;
+        }
+        
+        .features h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            border: 1px solid #f1aeb5;
+            color: #721c24;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>Sprint Effort Estimator using LLM</h2>
-
-    <form method="POST">
-        <label>User Story Description:</label><br>
-        <textarea name="description" required rows="4" cols="50"></textarea><br>
-
-        <label>Acceptance Criteria:</label><br>
-        <textarea name="criteria" required rows="3" cols="50"></textarea><br>
-
-        <label>Team Size:</label><br>
-        <input type="number" name="team_size" required><br>
-
-        <label>Dependencies:</label><br>
-        <textarea name="dependencies" rows="2" cols="50"></textarea><br>
-
-        <label>Risks:</label><br>
-        <textarea name="risks" rows="2" cols="50"></textarea><br><br>
-
-        <button type="submit">Estimate Effort</button>
-    </form>
-
-    {% if estimation %}
-        <h3>Estimation Result:</h3>
-        <pre>{{ estimation }}</pre>
-    {% endif %}
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Enhanced Sprint Estimator</h1>
+            <p>AI-Powered Project Planning with Bottleneck Analysis & Resource Optimization</p>
+        </div>
+        
+        <div class="form-container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-error">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form method="POST" id="projectForm">
+                <div class="form-grid">
+                    <div class="form-section">
+                        <h3>📋 Project Information</h3>
+                        <div class="form-group">
+                            <label for="project_name">Project Name *</label>
+                            <input type="text" id="project_name" name="project_name" required placeholder="e.g., E-commerce Platform Redesign">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Project Description *</label>
+                            <textarea id="description" name="description" required placeholder="Describe the project goals, scope, and key requirements..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="priority">Project Priority</label>
+                            <select id="priority" name="priority">
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>👥 Team & Timeline</h3>
+                        <div class="form-group">
+                            <label for="total_team_size">Total Team Size *</label>
+                            <input type="number" id="total_team_size" name="total_team_size" min="1" max="20" value="5" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="duration_weeks">Project Duration (weeks) *</label>
+                            <input type="number" id="duration_weeks" name="duration_weeks" min="1" max="52" value="8" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="team_skills">Team Skills (comma-separated)</label>
+                            <input type="text" id="team_skills" name="team_skills" placeholder="React, Node.js, Python, AWS, DevOps">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tech_stack">Technology Stack (comma-separated)</label>
+                            <input type="text" id="tech_stack" name="tech_stack" placeholder="React, Express, MongoDB, Docker">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section full-width">
+                        <h3>📝 User Stories</h3>
+                        <div class="form-group">
+                            <label for="user_stories">User Stories (one per line)</label>
+                            <textarea id="user_stories" name="user_stories" rows="6" placeholder="As a user, I want to login to access my account
+As an admin, I want to manage user roles and permissions
+As a customer, I want to search and filter products
+As a vendor, I want to update my product inventory"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>🔗 Dependencies</h3>
+                        <div class="form-group">
+                            <label for="dependencies">Known Dependencies (one per line)</label>
+                            <textarea id="dependencies" name="dependencies" rows="4" placeholder="Third-party API integration
+Database migration
+External payment gateway setup
+OAuth service configuration"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>⚠️ Risks</h3>
+                        <div class="form-group">
+                            <label for="risks">Known Risks (one per line)</label>
+                            <textarea id="risks" name="risks" rows="4" placeholder="Third-party service downtime
+Integration complexity
+Resource availability
+Performance bottlenecks"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn">
+                        🚀 Generate Sprint Plan & Analysis
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="features">
+            <h3>✨ What You'll Get</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>Comprehensive Sprint Breakdown</h4>
+                    <p>Detailed sprint planning with story points, hours, and capacity analysis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h4>Bottleneck Identification</h4>
+                    <p>AI-powered analysis to identify and mitigate project bottlenecks</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h4>Resource Planning</h4>
+                    <p>Optimal team allocation and capacity utilization recommendations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Risk Assessment</h4>
+                    <p>Comprehensive risk analysis with mitigation strategies</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h4>Timeline & Milestones</h4>
+                    <p>Detailed project timeline with key milestones and dependencies</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h4>Excel Spreadsheet</h4>
+                    <p>Downloadable comprehensive project documentation and planning sheets</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.innerHTML = '🔄 Analyzing Project...';
+            submitBtn.disabled = true;
+        });
+    </script>
 </body>
 </html>
