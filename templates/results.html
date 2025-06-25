@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint Analysis Results - {{ project_details.project_name }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .action-bar {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 1px solid #e1e5e9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .download-btn {
+            background: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #218838;
+        }
+        
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: #5a6268;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .analysis-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .analysis-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .analysis-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .project-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .summary-item {
+            text-align: center;
+        }
+        
+        .summary-item .value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .summary-item .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1e5e9;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active,
+        .tab:hover {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .action-bar {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Sprint Analysis Complete</h1>
+            <p>Comprehensive project analysis for: <strong>{{ project_details.project_name }}</strong></p>
+        </div>
+        
+        <div class="action-bar">
+            <div>
+                <strong>Generated:</strong> {{ analysis.get('timestamp', 'Just now') }}
+            </div>
+            <div>
+                <a href="/download/{{ spreadsheet_file }}" class="download-btn">
+                    📥 Download Excel Report
+                </a>
+                <a href="/" class="back-btn">
+                    ← New Analysis
+                </a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="project-summary">
+                <h2>📋 Project Overview</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="value">{{ project_details.total_team_size }}</div>
+                        <div class="label">Team Members</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">{{ project_details.duration_weeks }}</div>
+                        <div class="label">Weeks Duration</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">{{ project_details.user_stories|length }}</div>
+                        <div class="label">User Stories</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">{{ project_details.priority }}</div>
+                        <div class="label">Priority Level</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('overview')">📋 Overview</button>
+                <button class="tab" onclick="showTab('sprints')">🚀 Sprint Plan</button>
+                <button class="tab" onclick="showTab('bottlenecks')">🔍 Bottlenecks</button>
+                <button class="tab" onclick="showTab('resources')">👥 Resources</button>
+                <button class="tab" onclick="showTab('risks')">⚠️ Risks</button>
+                <button class="tab" onclick="showTab('timeline')">📅 Timeline</button>
+            </div>
+            
+            <div id="overview-tab" class="tab-content active">
+                <div class="analysis-section">
+                    <h3>🎯 Project Overview</h3>
+                    <div class="analysis-content">{{ analysis.get('project_overview', analysis.get('raw_analysis', 'Analysis completed successfully. Please download the Excel report for detailed information.'))[:1000] }}...</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>💡 Key Insights</h4>
+                    <p>Your comprehensive sprint analysis has been generated with AI-powered recommendations. The Excel report contains detailed breakdowns across multiple sheets including sprint planning, resource allocation, bottleneck analysis, and risk assessment.</p>
+                </div>
+            </div>
+            
+            <div id="sprints-tab" class="tab-content">
+                <div class="analysis-section full-width">
+                    <h3>🚀 Sprint Breakdown</h3>
+                    <div class="analysis-content">{{ analysis.get('sprint_breakdown', 'Sprint breakdown available in the Excel report with detailed story points, hours, and capacity planning for each sprint.')[:2000] }}</div>
+                </div>
+            </div>
+            
+            <div id="bottlenecks-tab" class="tab-content">
+                <div class="analysis-section full-width">
+                    <h3>🔍 Bottleneck Analysis</h3>
+                    <div class="analysis-content">{{ analysis.get('bottleneck_analysis', 'Bottleneck analysis includes identification of technical, resource, and dependency-based constraints with mitigation strategies.')[:2000] }}</div>
+                </div>
+            </div>
+            
+            <div id="resources-tab" class="tab-content">
+                <div class="analysis-section full-width">
+                    <h3>👥 Resource Planning</h3>
+                    <div class="analysis-content">{{ analysis.get('resource_planning', 'Resource planning covers team allocation, capacity utilization, skill gap analysis, and optimal resource distribution across sprints.')[:2000] }}</div>
+                </div>
+            </div>
+            
+            <div id="risks-tab" class="tab-content">
+                <div class="analysis-section full-width">
+                    <h3>⚠️ Risk Assessment</h3>
+                    <div class="analysis-content">{{ analysis.get('risk_assessment', 'Risk assessment includes probability and impact analysis, mitigation strategies, and contingency planning for identified risks.')[:2000] }}</div>
+                </div>
+            </div>
+            
+            <div id="timeline-tab" class="tab-content">
+                <div class="analysis-section full-width">
+                    <h3>📅 Timeline & Milestones</h3>
+                    <div class="analysis-content">{{ analysis.get('timeline_milestones', 'Timeline includes sprint schedules, key milestones, dependency mapping, and critical path analysis.')[:2000] }}</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4>📊 Excel Report Contents</h4>
+                <p><strong>Your downloadable report includes 6 comprehensive sheets:</strong></p>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li><strong>Project Overview:</strong> Executive summary and project details</li>
+                    <li><strong>Sprint Breakdown:</strong> Detailed sprint planning with story points and capacity</li>
+                    <li><strong>Bottleneck Analysis:</strong> Identified constraints and mitigation strategies</li>
+                    <li><strong>Resource Planning:</strong> Team allocation and utilization optimization</li>
+                    <li><strong>Risk Assessment:</strong> Risk matrix with probability, impact, and mitigation plans</li>
+                    <li><strong>Timeline & Milestones:</strong> Project schedule with dependencies and critical path</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html> 
